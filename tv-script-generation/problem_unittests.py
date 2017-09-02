@@ -260,7 +260,7 @@ def test_build_nn(build_nn):
         assert final_state.name == 'final_state:0', \
             'Final state doesn\'t have the correct name. Found the name {}. Are you using build_rnn?'.format(final_state.name)
 
-        # Check Shape
+        # Check Shape       
         assert logits.get_shape().as_list() == test_input_data_shape + [test_vocab_size], \
             'Outputs has wrong shape.  Found shape {}'.format(logits.get_shape())
         assert final_state.get_shape().as_list() == [test_rnn_layer_size, 2, None, test_rnn_size], \
