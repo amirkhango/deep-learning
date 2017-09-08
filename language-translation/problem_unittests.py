@@ -33,7 +33,6 @@ def test_text_to_ids(text_to_ids):
     target_not_iter = [type(x) for x in test_target_id_seq if not isinstance(x, collections.Iterable)]
     assert not target_not_iter, \
         'Element in target_id_text is not iteratable.  Found type {}'.format(target_not_iter[0])
-
     source_changed_length = [(words, word_ids)
                              for words, word_ids in zip(test_source_text.split('\n'), test_source_id_seq)
                              if len(words.split()) != len(word_ids)]
